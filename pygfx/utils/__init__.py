@@ -1,4 +1,5 @@
 import logging
+from pkg_resources import resource_filename
 
 import numpy as np
 
@@ -8,6 +9,11 @@ from . import cm  # noqa: F401
 
 logger = logging.getLogger("pygfx")
 logger.setLevel(logging.WARNING)
+
+
+def get_resource_filename(name):
+    """Get the filename to a pygfx package resource."""
+    return resource_filename("pygfx.pkg_resources", name)
 
 
 def array_from_shadertype(shadertype):
